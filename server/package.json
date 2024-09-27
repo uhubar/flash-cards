@@ -1,12 +1,35 @@
 {
-  "name": "server",
+  "name": "211",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon app.js",
+    "dbr" : " npx sequelize db:drop  && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "createDB": "npx sequelize db:create",
+    "dropDB": "npx sequelize db:drop",
+    "modelGen": "npx sequelize-cli model:generate --name Test --attributes test:string",
+    "mig": "npx sequelize db:migrate",
+    "undoMig": "npx sequelize db:migrate:undo:all",
+    "reMig": "npx sequelize db:migrate:undo:all && npx sequelize db:migrate",
+    "initDB": "npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all",
+    "seedGen": "npx sequelize-cli seed:generate --name Test",
+    "seed": "npx sequelize db:seed:all",
+    "undoSeed": "npx sequelize db:seed:undo:all"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.7",
+    "pg": "^8.13.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.3",
+    "sequelize-cli": "^6.6.2"
+  }
 }
